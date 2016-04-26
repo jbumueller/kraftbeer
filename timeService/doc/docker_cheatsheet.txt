@@ -1,0 +1,25 @@
+eval $(docker-machine env)
+docker-machine env
+docker-machine status
+docker run -itd -p 8080:8080 hello-service 8080
+docker images
+docker ps
+docker ps -a
+docker kill `docker ps |grep '^.*\t' | sed -e "s/hello.*//"`
+docker build -t hello-service .
+
+
+# Delete all docker containers
+for i in `docker ps -a |grep -v 'REPOSITORY'|grep -v 'java'| sed -e "s/\S*\s*\S*\s*//;s/\s\s*.*//"`; do echo $i; done
+
+# Delete all docker images except for java
+for i in `docker ps -a |grep -v 'REPOSITORY'|grep -v 'java'| sed -e "s/\S*\s*\S*\s*//;s/\s\s*.*//"`; do echo $i; done
+
+# Delete all containers, build and start
+for i in `docker ps -a|grep -v 'CONTAINER'| sed -e "s/\s.*$//"`; do echo $i; done && docker build -t time-service . && docker run --rm -it -p 9090:9090 time-service 9090
+
+
+Spotify Docker Maven Plugin
+
+qaware github zwitscher	
+
