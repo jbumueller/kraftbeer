@@ -1,0 +1,22 @@
+- name: stop old time-service images
+  docker:
+    image: jbarthel/kraftbeer
+    state: stopped
+
+- name: delete old time-service application container
+  docker:
+    name: time-service
+    image: jbarthel/kraftbeer
+    state: absent
+
+
+- name: pull and run time-service application container
+  docker:
+    name: time-service
+    image: jbarthel/kraftbeer
+    state: reloaded
+    pull: always
+    ports:
+    - "9090:9090"
+    env:
+        SECRET_KEY: ssssh

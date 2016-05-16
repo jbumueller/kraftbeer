@@ -1,12 +1,21 @@
-- name: Add Hypriot Repo Key
+- name: apt-transport-https is present
+  apt:
+    name: apt-transport-https
+    state: latest
+    force: yes
+  tags: [docker]
+
+- name: Add hypriot repository apt key
   apt_key: url=https://packagecloud.io/gpg.key
 
-- name: Add Hypriot Repo and update cache
+- name: Add hypriot repository to apt sources
   apt_repository:
     repo: "deb https://packagecloud.io/Hypriot/Schatzkiste/debian/ jessie main"
-    update_cache: yes
     state: present
   tags: [docker]
+
+- name: Update apt cache
+  apt: update_cache=yes
   
 - name: Docker Hypriot is present
   apt:
