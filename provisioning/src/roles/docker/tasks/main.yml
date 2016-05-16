@@ -1,0 +1,9 @@
+- name: Add Hypriot Repo Key
+  apt_key: url=https://packagecloud.io/gpg.key
+
+- name: Add Hypriot Repo and update cache
+  apt_repository:
+    repo: "deb https://packagecloud.io/Hypriot/Schatzkiste/debian/ jessie main"
+    update_cache: yes
+    state: present
+  tags: [docker]
