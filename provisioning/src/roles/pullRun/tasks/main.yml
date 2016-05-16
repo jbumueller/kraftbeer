@@ -15,7 +15,6 @@
     name: time-service
     image: jbarthel/kraftbeer
     state: reloaded
-    pull: always
     ports:
     - "9090:9090"
     env:
