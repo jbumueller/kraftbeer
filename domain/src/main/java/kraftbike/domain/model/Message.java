@@ -13,7 +13,6 @@ public class Message {
 	private DateTime timestamp;
 
 	public Message(UUID id, User sender, Offer offer, String content, DateTime timestamp) {
-		super();
 		this.id = id;
 		this.sender = sender;
 		this.offer = offer;

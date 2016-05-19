@@ -19,7 +19,6 @@ public class Bike {
 
 	public Bike(UUID id, int year, String frame, int size, String shiftingSystem, String fork, String wheels,
 			String crankSet, String saddle, String handlebar, String pedals, String brakes) {
-		super();
 		this.setId(id);
 		this.year = year;
 		this.frame = frame;

@@ -19,7 +19,6 @@ public class Offer {
 
 	public Offer(UUID id, UUID ownerId, Currency price, String description, List<String> tags, List<String> pictures,
 			Bike bike, DateTime timestamp) {
-		super();
 		this.id = id;
 		this.ownerId = ownerId;
 		this.price = price;

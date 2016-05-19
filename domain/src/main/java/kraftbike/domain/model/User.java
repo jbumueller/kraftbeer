@@ -9,7 +9,6 @@ public class User {
 	private String firstname;
 
 	public User(UUID id, String name, String firstname) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.firstname = firstname;
