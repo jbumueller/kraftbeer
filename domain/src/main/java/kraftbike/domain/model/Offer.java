@@ -3,6 +3,8 @@ package kraftbike.domain.model;
 import java.util.Currency;
 import java.util.List;
 
+import org.joda.time.DateTime;
+
 public class Offer {
 
 	private String ownerId;
@@ -11,9 +13,10 @@ public class Offer {
 	private List<String> tags;
 	private List<String> pictures;
 	private Bike bike;
-	
+	private DateTime timestamp;
+
 	public Offer(String ownerId, Currency price, String description, List<String> tags, List<String> pictures,
-			Bike bike) {
+			Bike bike, DateTime timestamp) {
 		super();
 		this.ownerId = ownerId;
 		this.price = price;
@@ -21,6 +24,7 @@ public class Offer {
 		this.tags = tags;
 		this.pictures = pictures;
 		this.bike = bike;
+		this.timestamp = timestamp;
 	}
 
 	public Offer() {
