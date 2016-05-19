@@ -1,7 +1,10 @@
 package kraftbike.domain.model;
 
+import java.util.UUID;
+
 public class Bike {
 	
+	private UUID id;
 	private int year;
 	private String frame;
 	private int size;
@@ -14,9 +17,10 @@ public class Bike {
 	private String pedals;
 	private String brakes;
 
-	public Bike(int year, String frame, int size, String shiftingSystem, String fork, String wheels, String crankSet,
-			String saddle, String handlebar, String pedals, String brakes) {
+	public Bike(UUID id, int year, String frame, int size, String shiftingSystem, String fork, String wheels,
+			String crankSet, String saddle, String handlebar, String pedals, String brakes) {
 		super();
+		this.id = id;
 		this.year = year;
 		this.frame = frame;
 		this.size = size;
