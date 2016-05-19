@@ -3,7 +3,7 @@ package kraftbike.domain.model;
 import java.util.UUID;
 
 public class Bike {
-	
+
 	private UUID id;
 	private int year;
 	private String frame;
@@ -20,7 +20,7 @@ public class Bike {
 	public Bike(UUID id, int year, String frame, int size, String shiftingSystem, String fork, String wheels,
 			String crankSet, String saddle, String handlebar, String pedals, String brakes) {
 		super();
-		this.id = id;
+		this.setId(id);
 		this.year = year;
 		this.frame = frame;
 		this.size = size;
@@ -123,5 +123,13 @@ public class Bike {
 
 	public void setBrakes(String brakes) {
 		this.brakes = brakes;
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
 	}
 }

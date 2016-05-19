@@ -2,12 +2,14 @@ package kraftbike.domain.model;
 
 import java.util.Currency;
 import java.util.List;
+import java.util.UUID;
 
 import org.joda.time.DateTime;
 
 public class Offer {
 
-	private String ownerId;
+	private UUID id;
+	private UUID ownerId;
 	private Currency price;
 	private String description;
 	private List<String> tags;
@@ -15,9 +17,10 @@ public class Offer {
 	private Bike bike;
 	private DateTime timestamp;
 
-	public Offer(String ownerId, Currency price, String description, List<String> tags, List<String> pictures,
+	public Offer(UUID id, UUID ownerId, Currency price, String description, List<String> tags, List<String> pictures,
 			Bike bike, DateTime timestamp) {
 		super();
+		this.id = id;
 		this.ownerId = ownerId;
 		this.price = price;
 		this.description = description;
@@ -27,14 +30,19 @@ public class Offer {
 		this.timestamp = timestamp;
 	}
 
-	public Offer() {
+	public UUID getId() {
+		return id;
 	}
 
-	public String getOwnerId() {
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public UUID getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(String ownerId) {
+	public void setOwnerId(UUID ownerId) {
 		this.ownerId = ownerId;
 	}
 
@@ -77,4 +85,13 @@ public class Offer {
 	public void setBike(Bike bike) {
 		this.bike = bike;
 	}
+
+	public DateTime getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(DateTime timestamp) {
+		this.timestamp = timestamp;
+	}
+
 }
