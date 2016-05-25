@@ -19,6 +19,7 @@ public class BikeController {
 	
 	@RequestMapping( path="/api/bikes/{bikeId}", method=RequestMethod.GET)
 	public Bike get(@PathVariable UUID bikeId) {
+		
 		return bikeService.get(bikeId);
 	}
 }

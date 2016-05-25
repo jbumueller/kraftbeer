@@ -19,7 +19,7 @@ public class Bike {
 
 	public Bike(UUID id, int year, String frame, int size, String shiftingSystem, String fork, String wheels,
 			String crankSet, String saddle, String handlebar, String pedals, String brakes) {
-		this.setId(id);
+		this.id = id;
 		this.year = year;
 		this.frame = frame;
 		this.size = size;
@@ -34,6 +34,10 @@ public class Bike {
 	}
 
 	public Bike() {
+	}
+
+	public Bike(UUID id) {
+		this.id = id;
 	}
 
 	public int getYear() {
@@ -126,9 +130,5 @@ public class Bike {
 
 	public UUID getId() {
 		return id;
-	}
-
-	public void setId(UUID id) {
-		this.id = id;
 	}
 }
