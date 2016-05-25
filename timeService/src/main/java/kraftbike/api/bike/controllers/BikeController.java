@@ -1,4 +1,4 @@
-package main.controllers;
+package kraftbike.api.bike.controllers;
 
 import java.util.UUID;
 
@@ -17,7 +17,7 @@ public class BikeController {
 	@Autowired
 	private BikeService bikeService;
 	
-	@RequestMapping( path="/api/bikes/{bikeId}", method=RequestMethod.GET)
+	@RequestMapping( path="/api/bike/{bikeId}", method=RequestMethod.GET)
 	public Bike get(@PathVariable UUID bikeId) {
 		
 		return bikeService.get(bikeId);

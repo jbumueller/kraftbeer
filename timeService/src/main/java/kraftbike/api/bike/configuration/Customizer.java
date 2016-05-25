@@ -1,4 +1,4 @@
-package main.customization;
+package kraftbike.api.bike.configuration;
 
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
