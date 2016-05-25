@@ -16,7 +16,7 @@ import kraftbike.domain.model.BikeBuilder;
 import kraftbike.domain.service.BikeService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class BikeController_When_getting_a_bike {
+public class BikeControllerTest {
 
 	@Mock
 	private BikeService bikeService;
@@ -26,6 +26,7 @@ public class BikeController_When_getting_a_bike {
 	
 	@Test
 	public void If_an_existing_bike_is_requested_Then_a_valid_bike_is_returned() throws Exception {
+		Assertions.fail("");
 		// Arrange
 		UUID bikeId = UUID.randomUUID();
 		BikeBuilder bikeBuilder = BikeBuilder.create();
