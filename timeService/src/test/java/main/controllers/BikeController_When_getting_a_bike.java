@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.UUID;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -26,15 +27,15 @@ public class BikeController_When_getting_a_bike {
 	@Test
 	public void If_an_existing_bike_is_requested_Then_a_valid_bike_is_returned() throws Exception {
 		// Arrange
-		UUID bikeId = null;
+		UUID bikeId = UUID.randomUUID();
 		BikeBuilder bikeBuilder = BikeBuilder.create();
 		bikeBuilder.withId(bikeId);		
 		when(bikeService.get(bikeId)).thenReturn(new Bike());
 		
 		// Act
-		controllerUnderTest.get(bikeId);
+		Bike bike = controllerUnderTest.get(bikeId);
 		
 		// Assert
-
+		Assertions.assertThat(bike.getId()).isEqualTo(bikeId);
 	}
 }
