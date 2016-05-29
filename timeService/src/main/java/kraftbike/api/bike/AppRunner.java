@@ -3,7 +3,6 @@ package kraftbike.api.bike;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.test.ImportAutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 import configuration.DomainConfiguration;
