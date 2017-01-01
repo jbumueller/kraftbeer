@@ -6,11 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 		<org.mockito.version>1.9.5</org.mockito.version>
 		<com.google.guava.version>19.0</com.google.guava.version>
 		<org.assertj.version>3.0.0</org.assertj.version>
+		<org.springframework.version>3.0.2.RELEASE</org.springframework.version>
 	</properties>
 
 	<dependencies>
@@ -29,7 +32,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.0.2.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 	</dependencies>
 
