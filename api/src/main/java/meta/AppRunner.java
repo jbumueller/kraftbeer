@@ -1,4 +1,4 @@
-package kraftbike.api.bike;
+package meta;
 
 
 import org.springframework.boot.SpringApplication;

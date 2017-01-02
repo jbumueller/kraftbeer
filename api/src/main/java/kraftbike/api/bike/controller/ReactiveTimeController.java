@@ -1,4 +1,4 @@
-	package kraftbike.api.bike.controllers;
+	package kraftbike.api.bike.controller;
 
 import org.joda.time.DateTime;
 import org.springframework.web.bind.annotation.RequestMapping;

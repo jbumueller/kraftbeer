@@ -1,4 +1,4 @@
-package kraftbike.api.bike.controllers;
+package kraftbike.api.bike.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import configuration.DomainConfiguration;
+import kraftbike.api.bike.controller.BikeController;
 import kraftbike.domain.model.Bike;
 import kraftbike.domain.model.BikeBuilder;
 import kraftbike.domain.service.BikeService;
