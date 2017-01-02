@@ -5,7 +5,7 @@ import java.util.UUID;
 import kraftbike.domain.model.Bike;
 
 public class BikeBuilder {
-	private UUID id;
+	private UUID id = UUID.randomUUID();
 
 	public static BikeBuilder create() {
 		return new BikeBuilder();
@@ -15,8 +15,9 @@ public class BikeBuilder {
 
 	}
 
-	public void withId(UUID id) {
+	public BikeBuilder withId(UUID id) {
 		this.id = id;
+		return this;
 	}
 	
 	public Bike build() {

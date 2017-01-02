@@ -27,27 +27,34 @@ public class BikeControllerTest {
 
 	@Mock
 	private BikeService bikeService;
-	
+
 	@InjectMocks
-	private BikeController controllerUnderTest;
+	private BikeController bikeController;
 
 	@Before
-	public void setup(){
+	public void setup() {
 		MockitoAnnotations.initMocks(this);
 	}
-	
+
 	@Test
 	public void If_an_existing_bike_is_requested_Then_a_valid_bike_is_returned() throws Exception {
 		// Arrange
 		UUID bikeId = UUID.randomUUID();
-		BikeBuilder bikeBuilder = BikeBuilder.create();
-		bikeBuilder.withId(bikeId);		
-		when(bikeService.get(bikeId)).thenReturn(new Bike(bikeId));
+		when(bikeService.get(bikeId)).thenReturn(BikeBuilder.create().withId(bikeId).build());
+
+		// Act
+		Bike bike = (Bike) bikeController.get(bikeId).getResult();
+
+		// Assert
+		assertThat(bike.getId()).isEqualTo(bikeId);
+	}
+
+	@Test
+	public void If_a_new_bike_is_put_Then_the_bike_is_stored() throws Exception {
+		// Arrange
 		
 		// Act
-		Bike bike = controllerUnderTest.get(bikeId);
 		
 		// Assert
-		 assertThat(bike.getId()).isEqualTo(bikeId);
 	}
 }

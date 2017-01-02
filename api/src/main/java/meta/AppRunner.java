@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 import configuration.DomainConfiguration;
+import meta.configuration.ApiConfiguration;
 
-@Import(DomainConfiguration.class)
+@Import({DomainConfiguration.class, ApiConfiguration.class})
 @SpringBootApplication
 public class AppRunner {
 
