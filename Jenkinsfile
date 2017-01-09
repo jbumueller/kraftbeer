@@ -19,15 +19,11 @@ node {
     checkout scm
 
     stage 'Clean'
-    sh "cd api/"
-    sh "mvn clean"
-    sh "cd .."
+    sh "mvn -f api/pom.xml clean"
     
     stage 'Build'
 
-    sh "cd api/"
-    sh "mvn package"
-    sh "cd .."
+    sh "mvn -f api/pom.xml package"
   } catch (err) {
     currentBuild.result = "FAILURE"
 
