@@ -33,7 +33,7 @@ stage('Domain') {
     
     stage 'Build'
 
-    sh "mvn -f domain/pom.xml package"
+    sh "mvn -f domain/pom.xml install"
   }
 }
 
