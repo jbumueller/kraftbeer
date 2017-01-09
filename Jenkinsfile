@@ -6,8 +6,7 @@ def shellOutput( cmd ) {
   return sh(returnStdout: true, script: cmd).trim()
 }
 
-stage('Init'){
-  node {
+  node('Init') {
     def branch = env.JOB_NAME.replaceFirst('.+/', '')
 
     try {
@@ -23,11 +22,9 @@ stage('Init'){
       throw err
     }
   }
-}
 
 
-stage('Domain') {
-  node {
+  node('Domain') {
     stage 'Clean'
     sh "mvn -f domain/pom.xml clean"
     
@@ -35,10 +32,8 @@ stage('Domain') {
 
     sh "mvn -f domain/pom.xml install"
   }
-}
 
-stage('api'){
-  node{
+  node('api'){
     stage 'Clean'
     sh "mvn -f api/pom.xml clean"
     
@@ -46,4 +41,3 @@ stage('api'){
 
     sh "mvn -f api/pom.xml package"
   }
-}
