@@ -19,10 +19,15 @@ node {
     checkout scm
 
     stage 'Clean'
+    sh "cd api/"
     sh "mvn clean"
+    sh "cd .."
     
     stage 'Build'
+
+    sh "cd api/"
     sh "mvn package"
+    sh "cd .."
   } catch (err) {
     currentBuild.result = "FAILURE"
 
